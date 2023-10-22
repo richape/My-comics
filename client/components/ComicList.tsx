@@ -9,9 +9,9 @@ function ComicList() {
       <div className="section">
         <div>
           {isLoading ? (
-            <p>Hmmmm Where are all my Comics?</p>
+            <h3>Hmmmm Where are all my Comics?</h3>
           ) : error ? (
-            <p>Can not find my Comics?</p>
+            <h3>Can not find my Comics?</h3>
           ) : data ? (
             data.map((comic, index) => (
               <ComicDetails key={index} comic={comic} />
