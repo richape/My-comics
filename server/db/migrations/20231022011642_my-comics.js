@@ -8,6 +8,7 @@ export function up(knex) {
     table.string('publisher')
     table.string('credits')
     table.string('coverArt')
+    table.string('coverArtist')
   })
 }
 
