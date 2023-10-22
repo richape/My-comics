@@ -31,7 +31,7 @@ This repo is designed to provide space to code a fullstack app. It contains node
 
 ### 1. Choosing your data set
 
-- [ ] First, decide what you would like to keep a collection of. This could be a repo for keeping track of movies, books, gifs, cars, rocks, anything you fancy, but keep it simple!
+- [x] First, decide what you would like to keep a collection of. This could be a repo for keeping track of movies, books, gifs, cars, rocks, anything you fancy, but keep it simple!
   <details style="padding-left: 2em">
     <summary>More about your collection</summary>
 
@@ -42,17 +42,17 @@ This repo is designed to provide space to code a fullstack app. It contains node
     | 1 | Ready Player One | Ernest Cline |
     | 2 | Throwing Rocks at the Google Bus | Douglas Rushkoff |
 
-Our first job is getting something showing on the front end from our database. Here's a list of steps in case they are useful. You can build in any order you like though ;)
+Our first job is getting something showing on the front end from our database. Here's a list of steps in case they are useful. You can build in any order you like though ;
 
 ## Back end
 
 ### 2. Building the database
 
-- [ ] Design a database to store a list of your things (e.g. books)
-- [ ] Build the migrations and seed data
+- [x] Design a database to store a list of your things (e.g. books)
+- [x] Build the migrations and seed data
 
 ### 3. Building the API
-- [ ] Build an API (back end route) to get the information from your database
+- [x] Build an API (back end route) to get the information from your database
 - [ ] Test your API with Insomnia
 
 ## Front end
