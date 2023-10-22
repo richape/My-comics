@@ -1,6 +1,8 @@
-import { Route createRoutesFromElements } from 'react-router-dom'
+import { Route, createRoutesFromElements } from 'react-router-dom'
 import App from './components/App.tsx'
 
 export const routes = createRoutesFromElements(
-  <Route element={<App />}></Route>
+  <Route element={<App />}>
+    <Route index element={<}
+  </Route>
 )
