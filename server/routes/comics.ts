@@ -8,6 +8,7 @@ router.get('/', async (req, res) => {
     const comics = await db.getAllComics()
     res.json({ comics })
   } catch (error) {
+    console.error(error)
     res.status(500).json({ message: 'error' })
   }
 })
@@ -23,6 +24,7 @@ router.get('/:comicId', async (req, res) => {
     res.json({ comic })
   } catch (error) {
     res.sendStatus(500)
+    console.error(error)
   }
 })
 
