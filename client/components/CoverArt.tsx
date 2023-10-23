@@ -7,11 +7,13 @@ interface CoverArtProps {
 
 const CoverArt: React.FC<CoverArtProps> = ({ comic }) => {
   return (
-    <div className="cover-art">
-      <Link to={`/comic/${comic.id}`}>
-        <img src={comic.coverArt} alt={comic.title} />
-      </Link>
-    </div>
+    <>
+      <div className="cover-art">
+        <Link to={`/comic/${comic.id}`}>
+          <img src={comic.coverArt} alt={comic.title} />
+        </Link>
+      </div>
+    </>
   )
 }
 

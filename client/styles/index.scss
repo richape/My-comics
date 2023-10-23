@@ -7,6 +7,12 @@ body {
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
 
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
 .comic-box {
   width: 200px;
   height: 300px; // set a fixed width & height
@@ -16,7 +22,7 @@ body {
   border: 5px solid #ffffff00;
   border-radius: 5px;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
+  // overflow: hidden;
 
     img {
       width: 100%;
