@@ -1,4 +1,4 @@
-import { Comic } from '../../models/comics.tsx'
+import { Comic } from '../../models/comics.ts'
 
 interface Props {
   comic: Comic
@@ -8,11 +8,12 @@ export function ComicDetails(props: Props) {
   const { comic } = props
   // const comicId = comic.id
 
+  console.log('File path:', comic.coverArt)
+
   return (
     <>
       <div className="comic-box">
         <img src={comic.coverArt} alt={comic.title} />
-        {/* console.log(comic.comicArt); */}
         <h2>{comic.title}</h2>
         <h3>{comic.name}</h3>
         <h4>{comic.issue}</h4>
