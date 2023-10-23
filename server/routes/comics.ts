@@ -1,3 +1,4 @@
+// server-side routing
 import { Router } from 'express'
 import * as db from '../db/comicDb.ts'
 
