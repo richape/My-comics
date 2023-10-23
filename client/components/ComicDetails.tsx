@@ -12,6 +12,7 @@ export function ComicDetails(props: Props) {
     <>
       <div className="comic-box">
         <img src={comic.coverArt} alt={comic.title} />
+        {/* console.log(comic.comicArt); */}
         <h2>{comic.title}</h2>
         <h3>{comic.name}</h3>
         <h4>{comic.issue}</h4>

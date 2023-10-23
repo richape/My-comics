@@ -9,7 +9,7 @@ export async function seed(knex) {
       datePublished: '2020-10-28',
       publisher: 'IDW Publishing',
       credits: 'Kevin Eastman, Peter Laird, Tom Waltz',
-      coverArt: '/public/images/TMNT-TLR#1.jpeg',
+      coverArt: '/images/TMNT-TLR#1.jpeg',
       coverArtist:
         'Esau Escorza, Issac Escorza, Kevin Eastman, Mateus Santolouco',
     },
@@ -21,7 +21,7 @@ export async function seed(knex) {
       datePublished: '2021-02-17',
       publisher: 'IDW Publishing',
       credits: 'Kevin Eastman, Peter Laird, Tom Waltz',
-      coverArt: '/public/images/TMNT-TLR#2.jpeg',
+      coverArt: '/images/TMNT-TLR#2.jpeg',
       coverArtist:
         'Esau Escorza, Issac Escorza, Kevin Eastman, Mateus Santolouco',
     },
@@ -33,7 +33,7 @@ export async function seed(knex) {
       datePublished: '2021-05-26',
       publisher: 'IDW Publishing',
       credits: 'Kevin Eastman, Peter Laird, Tom Waltz',
-      coverArt: '/public/images/TMNT-TLR#3.jpeg',
+      coverArt: '/images/TMNT-TLR#3.jpeg',
       coverArtist:
         'Esau Escorza, Issac Escorza, Kevin Eastman, Mateus Santolouco',
     },
@@ -45,7 +45,7 @@ export async function seed(knex) {
       datePublished: '2021-09-22',
       publisher: 'IDW Publishing',
       credits: 'Kevin Eastman, Peter Laird, Tom Waltz',
-      coverArt: '/public/images/TMNT-TLR#4.jpeg',
+      coverArt: '/images/TMNT-TLR#4.jpeg',
       coverArtist: 'Esau Escorza, Issac Escorza, Dave Wachter',
     },
     {
@@ -56,7 +56,7 @@ export async function seed(knex) {
       datePublished: '2022-04-27',
       publisher: 'IDW Publishing',
       credits: 'Kevin Eastman, Peter Laird, Tom Waltz',
-      coverArt: '/public/images/TMNT-TLR#5.jpeg',
+      coverArt: '/images/TMNT-TLR#5.jpeg',
       coverArtist: 'Esau Escorza, Issac Escorza, Ben Bishop, Kevin Eastman',
     },
     {
@@ -67,7 +67,7 @@ export async function seed(knex) {
       datePublished: '2022-08',
       publisher: 'Dynamite Entertainment',
       credits: 'Greg Weisman, George Kambadais',
-      coverArt: '/public/images/gargoyles-1.jpeg',
+      coverArt: '/images/gargoyles-1.jpeg',
       coverArtist: 'David Nakayama',
     },
     {
@@ -78,7 +78,7 @@ export async function seed(knex) {
       datePublished: '2022-09',
       publisher: 'Dynamite Entertainment',
       credits: 'Greg Weisman, George Kambadais',
-      coverArt: '/public/images/gargoyles-2.jpeg',
+      coverArt: '/images/gargoyles-2.jpeg',
       coverArtist: 'David Nakayama',
     },
     {
@@ -89,7 +89,7 @@ export async function seed(knex) {
       datePublished: '2022-10',
       publisher: 'Dynamite Entertainment',
       credits: 'Greg Weisman, George Kambadais',
-      coverArt: '/public/images/gargoyles-3.jpeg',
+      coverArt: '/images/gargoyles-3.jpeg',
       coverArtist: 'David Nakayama',
     },
     {
@@ -100,7 +100,7 @@ export async function seed(knex) {
       datePublished: '2022-11',
       publisher: 'Dynamite Entertainment',
       credits: 'Greg Weisman, George Kambadais',
-      coverArt: '/public/images/gargoyles-4.jpeg',
+      coverArt: '/images/gargoyles-4.jpeg',
       coverArtist: 'David Nakayama',
     },
     {
@@ -111,7 +111,7 @@ export async function seed(knex) {
       datePublished: '2022-12',
       publisher: 'Dynamite Entertainment',
       credits: 'Greg Weisman, George Kambadais',
-      coverArt: '/public/images/gargoyles-5.jpeg',
+      coverArt: '/images/gargoyles-5.jpeg',
       coverArtist: 'David Nakayama',
     },
     {
@@ -122,7 +122,7 @@ export async function seed(knex) {
       datePublished: '2025-01-25',
       publisher: 'IDW Publishing',
       credits: 'Kevin Eastman, Tom Waltz',
-      coverArt: '/public/images/TMNT-LY#1.jpeg',
+      coverArt: '/images/TMNT-LY#1.jpeg',
       coverArtist: 'Ben Bishop, Kevin Eastman',
     },
   ])
