@@ -6,3 +6,12 @@ body {
   padding: 20px;
   font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif;
 }
+
+.comic-box {
+  margin-bottom: 20px;
+  background-color: #ffffffe3;
+  padding: 15px;
+  border: 5px solid #ffffff00;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
