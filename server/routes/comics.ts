@@ -14,19 +14,19 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.get('/:comicId', async (req, res) => {
-  try {
-    const comicId = Number(req.params.comicId)
-    if (isNaN(comicId)) {
-      res.sendStatus(400)
-      return
-    }
-    const comic = await db.getComicById(comicId)
-    res.json({ comic })
-  } catch (error) {
-    res.sendStatus(500)
-    console.error(error)
-  }
-})
-
 export default router
+
+// router.get('/:comicId', async (req, res) => {
+//   try {
+//     const comicId = Number(req.params.comicId)
+//     if (isNaN(comicId)) {
+//       res.sendStatus(400)
+//       return
+//     }
+//     const comic = await db.getComicById(comicId)
+//     res.json({ comic })
+//   } catch (error) {
+//     res.sendStatus(500)
+//     console.error(error)
+//   }
+// })

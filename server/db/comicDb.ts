@@ -9,14 +9,14 @@ export async function getAllComics(): Promise<Comic[]> {
 }
 
 // Select comics by ID
-export async function getComicById(id: number): Promise<Comic[]> {
-  return db('comics').where({ id }).select()
-}
+// export async function getComicById(id: number): Promise<Comic[]> {
+//   return db('comics').where({ id }).select()
+// }
 
 // Select comics by type
-export async function getComicByType(type: string): Promise<Comic[]> {
-  return db('comics').where({ type }).select()
-}
+// export async function getComicByType(type: string): Promise<Comic[]> {
+//   return db('comics').where({ type }).select()
+// }
 
 // Add new comic
 export async function addComic(comic: ComicData): Promise<Comic[]> {
