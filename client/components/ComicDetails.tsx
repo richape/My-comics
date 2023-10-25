@@ -1,26 +1,34 @@
-import { Comic } from '../../models/comics.ts'
+import { useComics } from '../hooks/useComics.ts'
+import { useParams } from 'react-router-dom'
 
-interface Props {
-  comic: Comic
-}
+function ComicDetails() {
+  const { data, error, isLoading } = useComics()
+  console.log(data)
 
-export function ComicDetails(props: Props) {
-  const { comic } = props
-  // const comicId = comic.id
+  const { id } = useParams()
+  // console.log(id)
 
-  console.log('Comic Object:', comic)
+  const findComic = data?.find((comic) => comic.id === Number(id))
+  console.log(findComic)
 
   return (
     <>
       <div className="comic-box">
-        <img src={comic.coverArt} alt={comic.title} />
-        {/* <h2>{comic.name}</h2>
-        <h2>{comic.title}</h2>
-        <h4>Issue: {comic.issue}</h4>
-        <h4>Date published: {comic.datePublished}</h4>
-        <h4>Published by: {comic.publisher}</h4>
-        <h4>Writers: {comic.credits}</h4>
-        <h4>Cover Artist: {comic.coverArtist}</h4> */}
+        {isLoading ? (
+          <h3>Hmmmm Where are all my Comics?</h3>
+        ) : error ? (
+          <h3>Can not find my Comics?</h3>
+        ) : findComic ? (
+          <>
+            <h2>{findComic.name}</h2>
+            <h2>{findComic.title}</h2>
+            <h4>Issue: {findComic.issue}</h4>
+            <h4>Date published: {findComic.datePublished}</h4>
+            <h4>Published by: {findComic.publisher}</h4>
+            <h4>Writers: {findComic.credits}</h4>
+            <h4>Cover Artist: {findComic.coverArtist}</h4>
+          </>
+        ) : null}
       </div>
     </>
   )
