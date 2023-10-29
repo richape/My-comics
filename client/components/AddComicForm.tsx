@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const AddComic: React.FC = () => {
+const AddComicForm: React.FC = () => {
   const [comic, setComic] = useState<{
     title: string
     name: string
@@ -53,14 +53,11 @@ const AddComic: React.FC = () => {
     try {
       const response = await fetch('/api/add-comic', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(comic),
+        body: formData,
       })
 
       if (response.ok) {
-        // Comic added successfully the form wil reset.
+        // If comic is added successfully the form will reset.
         setComic({
           title: '',
           name: '',
@@ -146,7 +143,7 @@ const AddComic: React.FC = () => {
         <div className="form-group">
           <label htmlFor="coverArt">Cover Art:</label>
           <input
-            type="text"
+            type="file"
             id="coverArt"
             name="coverArt"
             accept="image/"
@@ -163,6 +160,11 @@ const AddComic: React.FC = () => {
             onChange={handleInputChange}
           />
         </div>
+        {comic.coverArt ? (
+          <div className="form-group">
+            <img src={URL.createObjectURL(comic.coverArt)} alt="Cover Art" />
+          </div>
+        ) : null}
         <button type="submit" className="add-button">
           Add Comic
         </button>
@@ -171,4 +173,4 @@ const AddComic: React.FC = () => {
   )
 }
 
-export default AddComic
+export default AddComicForm

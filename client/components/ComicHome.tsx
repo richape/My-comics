@@ -2,6 +2,7 @@ import { useComics } from '../hooks/useComics.ts'
 import CoverArt from './CoverArt.tsx'
 import Header from './Header.tsx'
 import Footer from './Footer.tsx'
+import AddComicButton from './AddComicButton.tsx'
 
 function ComicHome() {
   const { data, error, isLoading } = useComics()
@@ -19,6 +20,7 @@ function ComicHome() {
         ) : data ? (
           data.map((comic, index) => <CoverArt key={index} comic={comic} />)
         ) : null}
+        <AddComicButton />
       </div>
       <div>
         <Footer />
