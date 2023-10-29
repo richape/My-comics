@@ -1,18 +1,24 @@
 import { useComics } from '../hooks/useComics.ts'
 import { useParams } from 'react-router-dom'
+import CoverArt from './CoverArt.tsx'
+import Nav from './Nav.tsx'
+import Footer from './Footer.tsx'
 
 function ComicDetails() {
   const { data, error, isLoading } = useComics()
-  console.log(data)
+  // console.log(data)
 
   const { id } = useParams()
   // console.log(id)
 
   const findComic = data?.find((comic) => comic.id === Number(id))
-  console.log(findComic)
+  // console.log(findComic)
 
   return (
     <>
+      <div>
+        <Nav />
+      </div>
       <div className="comic-box">
         {isLoading ? (
           <h3>Hmmmm Where are all my Comics?</h3>
@@ -29,6 +35,10 @@ function ComicDetails() {
             <h4>Cover Artist: {findComic.coverArtist}</h4>
           </>
         ) : null}
+      </div>
+      {findComic && <CoverArt comic={findComic} />}
+      <div>
+        <Footer />
       </div>
     </>
   )

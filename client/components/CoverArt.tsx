@@ -9,11 +9,9 @@ const CoverArt: React.FC<CoverArtProps> = ({ comic }) => {
   return (
     <>
       <div className="comic-box">
-        <div className="cover-art">
-          <Link to={`/comic/${comic.id}`}>
-            <img src={comic.coverArt} alt={comic.title} />
-          </Link>
-        </div>
+        <Link to={`/comic/${comic.id}`}>
+          <img src={comic.coverArt} alt={comic.title} />
+        </Link>
       </div>
     </>
   )
