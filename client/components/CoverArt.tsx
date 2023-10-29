@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { Comic } from '../../models/comics'
+// import AddComic from './AddComic'
 
 interface CoverArtProps {
   comic: Comic

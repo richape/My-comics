@@ -37,9 +37,7 @@ function ComicDetails() {
         ) : null}
       </div>
       {findComic && <CoverArt comic={findComic} />}
-      <div>
-        <Footer />
-      </div>
+      <Footer />
     </>
   )
 }
