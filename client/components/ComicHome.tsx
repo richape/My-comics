@@ -21,7 +21,9 @@ function ComicHome() {
         ) : data ? (
           data.map((comic, index) => <CoverArt key={index} comic={comic} />)
         ) : null}
-        <Link to="/add-comic">Add Comic</Link>
+        <Link to="/add-comic" className="comic-box">
+          Add Comic
+        </Link>
       </div>
       <div>
         <Footer />
