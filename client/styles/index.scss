@@ -1,5 +1,5 @@
 body {
-  position: absolute;
+  // position: absolute;
   top: 0;
   left: 0;
   margin: 0;
@@ -75,15 +75,15 @@ body {
 
     label {
       display: block;
-      margin-bottom: 5px;
+      // margin-bottom: 5px;
       font-weight: bold;
     }
-
+    
     input, textarea, select {
-      width: 92.5%;
+      width: 93%;
       padding: 10px;
       border: 1px solid #ccc;
-      border-radius: 3px;
+      border-radius: 3px; 
       font-size: 16px;
     }
 
@@ -118,3 +118,10 @@ body {
     background-color: #0056b3;
   }
 }
+
+// .add-button.with-icon {
+//   background-image: url();
+//   background-repeat: no-repeat;
+//   background-position: left center;
+//   padding-left: 30px;
+// }

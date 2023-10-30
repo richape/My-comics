@@ -2,7 +2,6 @@ import { useComics } from '../hooks/useComics.ts'
 import { useParams } from 'react-router-dom'
 import CoverArt from './CoverArt.tsx'
 import Nav from './Nav.tsx'
-import Footer from './Footer.tsx'
 
 function ComicDetails() {
   const { data, error, isLoading } = useComics()
@@ -37,7 +36,6 @@ function ComicDetails() {
         ) : null}
       </div>
       {findComic && <CoverArt comic={findComic} />}
-      <Footer />
     </>
   )
 }

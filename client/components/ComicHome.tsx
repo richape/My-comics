@@ -2,7 +2,6 @@ import { useComics } from '../hooks/useComics.ts'
 import { Link } from 'react-router-dom'
 import CoverArt from './CoverArt.tsx'
 import Header from './Header.tsx'
-import Footer from './Footer.tsx'
 import AddComicButton from './AddComicButton.tsx'
 
 function ComicHome() {
@@ -24,9 +23,6 @@ function ComicHome() {
         <Link to="/add-comic" className="comic-box">
           Add Comic
         </Link>
-      </div>
-      <div>
-        <Footer />
       </div>
     </>
   )
