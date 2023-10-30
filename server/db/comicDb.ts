@@ -8,7 +8,6 @@ export async function getAllComics(): Promise<Comic[]> {
   return db('comics').select()
 }
 
-// Select comics by ID
 // export async function getComicById(id: number): Promise<Comic[]> {
 //   return db('comics').where({ id }).select()
 // }
