@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Nav from './Nav'
 
 const AddComicForm: React.FC = () => {
   const [comic, setComic] = useState<{
@@ -78,6 +79,7 @@ const AddComicForm: React.FC = () => {
 
   return (
     <div className="container">
+      <Nav />
       <div className="add-comic">
         <h2>Add Comic</h2>
         <form onSubmit={handleFormSubmit}>
