@@ -114,16 +114,5 @@ export async function seed(knex) {
       coverArt: '/images/gargoyles-5.jpg',
       coverArtist: 'David Nakayama',
     },
-    {
-      id: 11,
-      title: 'The Last Ronin - Lost Years: 1',
-      name: 'Teenage Mutant Ninja Turtles',
-      issue: 'One',
-      datePublished: '2025-01-25',
-      publisher: 'IDW Publishing',
-      credits: 'Kevin Eastman, Tom Waltz',
-      coverArt: '/images/TMNT-LY-1.jpg',
-      coverArtist: 'Ben Bishop, Kevin Eastman',
-    },
   ])
 }

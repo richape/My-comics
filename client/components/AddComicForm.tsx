@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { addComic } from '../apis/comics'
 import Nav from './Nav'
 
 const AddComicForm: React.FC = () => {
@@ -40,6 +41,7 @@ const AddComicForm: React.FC = () => {
     event.preventDefault()
 
     const formData = new FormData()
+
     formData.append('title', comic.title)
     formData.append('name', comic.name)
     formData.append('issue', comic.issue)
@@ -51,30 +53,19 @@ const AddComicForm: React.FC = () => {
       formData.append('coverArt', comic.coverArt)
     }
 
-    try {
-      const response = await fetch('/api/add-comic', {
-        method: 'POST',
-        body: formData,
-      })
+    await addComic(form)
 
-      if (response.ok) {
-        // If comic is added successfully the form will reset.
-        setComic({
-          title: '',
-          name: '',
-          issue: '',
-          datePublished: '',
-          publisher: '',
-          credits: '',
-          coverArt: null,
-          coverArtist: '',
-        })
-      } else {
-        console.error('Failed to add comic')
-      }
-    } catch (error) {
-      console.error('Error adding comic:', error)
-    }
+    // If comic is added successfully the form will reset.
+    setComic({
+      title: '',
+      name: '',
+      issue: '',
+      datePublished: '',
+      publisher: '',
+      credits: '',
+      coverArt: null,
+      coverArtist: '',
+    })
   }
 
   return (
