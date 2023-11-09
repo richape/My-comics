@@ -12,6 +12,6 @@ export async function addComic(comic: ComicData): Promise<unknown> {
   return request.post(`${rootUrl}/add-comics`).send(comic)
 }
 
-export async function deleteComic(comic: ComicData): Promise<unknown> {
+export async function deleteComic(comic: Comic): Promise<unknown> {
   return request.delete(`${rootUrl}/comics/${comic.id}`)
 }

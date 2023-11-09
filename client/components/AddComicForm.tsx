@@ -40,20 +40,24 @@ const AddComicForm: React.FC = () => {
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    const formData = new FormData()
+    // const formData = new FormData()
 
-    formData.append('title', comic.title)
-    formData.append('name', comic.name)
-    formData.append('issue', comic.issue)
-    formData.append('datePublished', comic.datePublished)
-    formData.append('publisher', comic.publisher)
-    formData.append('credits', comic.title)
-    formData.append('coverArtist', comic.coverArtist)
-    if (comic.coverArt) {
-      formData.append('coverArt', comic.coverArt)
-    }
+    // formData.append('title', comic.title)
+    // formData.append('name', comic.name)
+    // formData.append('issue', comic.issue)
+    // formData.append('datePublished', comic.datePublished)
+    // formData.append('publisher', comic.publisher)
+    // formData.append('credits', comic.title)
+    // formData.append('coverArtist', comic.coverArtist)
+    // if (comic.coverArt) {
+    //   formData.append('coverArt', comic.coverArt)
+    // }
 
-    await addComic(form)
+    // console.log(formData)
+    console.log(comic)
+
+    const api = await addComic(comic)
+    console.log(api)
 
     // If comic is added successfully the form will reset.
     setComic({

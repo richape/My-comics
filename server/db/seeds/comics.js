@@ -83,7 +83,7 @@ export async function seed(knex) {
     },
     {
       id: 8,
-      title: 'Gargoyles',
+      title: 'Gargoyles: Three',
       name: 'Disney',
       issue: '#03',
       datePublished: '2022-10',
@@ -94,7 +94,7 @@ export async function seed(knex) {
     },
     {
       id: 9,
-      title: 'Gargoyles',
+      title: 'Gargoyles: Four',
       name: 'Disney',
       issue: '#04',
       datePublished: '2022-11',
@@ -105,7 +105,7 @@ export async function seed(knex) {
     },
     {
       id: 10,
-      title: 'Gargoyles',
+      title: 'Gargoyles: Five',
       name: 'Disney',
       issue: '#05',
       datePublished: '2022-12',
