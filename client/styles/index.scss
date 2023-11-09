@@ -33,8 +33,7 @@ body {
 .cover-art {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-evenly;
-  width: 100%;
+  justify-content: space-around
 
     img {
       max-width: 100%;
