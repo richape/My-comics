@@ -40,7 +40,7 @@ router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
       publisher: req.body.publisher,
       credits: req.body.credits,
       coverArtist: req.body.coverArtist,
-      coverArt: req.file ? req.file.path : '',
+      coverArt: req.file ? req.file.path : null,
     }
 
     // Save coverArt path to database
