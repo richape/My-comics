@@ -5,7 +5,12 @@ const db = connection
 
 //Get all comics
 export async function getAllComics(): Promise<Comic[]> {
-  return db('comics').select()
+  try {
+    return db('comics').select()
+  } catch (error) {
+    console.error('Error while fetching all comics:', error)
+  }
+  throw Error
 }
 
 // export async function getComicById(id: number): Promise<Comic[]> {
@@ -18,18 +23,24 @@ export async function getAllComics(): Promise<Comic[]> {
 // }
 
 // Add new comic
+
 export async function addComic(comic: ComicData): Promise<Comic[]> {
-  return connection('comics')
-    .insert({ ...comic })
-    .returning([
-      'id',
-      'title',
-      'name',
-      'issue',
-      'datePublished',
-      'publisher',
-      'credits',
-      'coverArt',
-      'coverArtist',
-    ])
+  try {
+    return connection('comics')
+      .insert({ ...comic })
+      .returning([
+        'id',
+        'title',
+        'name',
+        'issue',
+        'datePublished',
+        'publisher',
+        'credits',
+        'coverArt',
+        'coverArtist',
+      ])
+  } catch (Error) {
+    console.error('Error while adding comic:', Error)
+  }
+  throw Error
 }
