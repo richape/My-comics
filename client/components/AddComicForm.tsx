@@ -40,20 +40,6 @@ const AddComicForm: React.FC = () => {
   const handleFormSubmit = async (event: React.FormEvent) => {
     event.preventDefault()
 
-    // const formData = new FormData()
-
-    // formData.append('title', comic.title)
-    // formData.append('name', comic.name)
-    // formData.append('issue', comic.issue)
-    // formData.append('datePublished', comic.datePublished)
-    // formData.append('publisher', comic.publisher)
-    // formData.append('credits', comic.title)
-    // formData.append('coverArtist', comic.coverArtist)
-    // if (comic.coverArt) {
-    //   formData.append('coverArt', comic.coverArt)
-    // }
-
-    // console.log(formData)
     console.log(comic)
 
     const api = await addComic(comic)
@@ -77,7 +63,7 @@ const AddComicForm: React.FC = () => {
       <Nav />
       <div className="add-comic">
         <h2>Add Comic</h2>
-        <form onSubmit={handleFormSubmit}>
+        <form onSubmit={handleFormSubmit} encType="multipart/form-data">
           <div className="form-group">
             <label htmlFor="title">Title:</label>
             <input

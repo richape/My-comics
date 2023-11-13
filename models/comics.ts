@@ -10,7 +10,7 @@ export interface Comic {
   coverArtist: string
 }
 
-export interface ComicData {
+export interface comicData {
   title: string
   name: string
   issue: string

@@ -1,8 +1,9 @@
 // server-side routing
 import { Router } from 'express'
 import * as db from '../db/comicDb.ts'
-import multer from 'multer'
-import path from 'path'
+import upload from '../upload.js'
+// import multer from 'multer'
+// import path from 'path'
 import { addComic } from '../db/comicDb.ts'
 
 const router = Router()
@@ -18,16 +19,16 @@ router.get('/', async (req, res) => {
   }
 })
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, path.join(__dirname, '../../public/images'))
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname)
-  },
-})
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, path.join(__dirname, '../../public/images'))
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + '-' + file.originalname)
+//   },
+// })
 
-const upload = multer({ storage })
+// const upload = multer({ storage })
 
 router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
   try {
@@ -40,7 +41,7 @@ router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
       publisher: req.body.publisher,
       credits: req.body.credits,
       coverArtist: req.body.coverArtist,
-      coverArt: req.file ? req.file.path : null,
+      coverArt: req.file?.filename as string,
     }
 
     // Save coverArt path to database
