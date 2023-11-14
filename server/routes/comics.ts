@@ -2,9 +2,8 @@
 import { Router } from 'express'
 import * as db from '../db/comicDb.ts'
 import upload from '../upload.js'
-// import multer from 'multer'
-// import path from 'path'
 import { addComic } from '../db/comicDb.ts'
+import { ComicData } from '../../models/comics.ts'
 
 const router = Router()
 
@@ -19,21 +18,9 @@ router.get('/', async (req, res) => {
   }
 })
 
-// const storage = multer.diskStorage({
-//   destination: (req, file, cb) => {
-//     cb(null, path.join(__dirname, '../../public/images'))
-//   },
-//   filename: (req, file, cb) => {
-//     cb(null, Date.now() + '-' + file.originalname)
-//   },
-// })
-
-// const upload = multer({ storage })
-
 router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
   try {
-    const comicData = {
-      id: req.body.id,
+    const ComicData: ComicData = {
       title: req.body.title,
       name: req.body.name,
       issue: req.body.issue,
@@ -45,7 +32,7 @@ router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
     }
 
     // Save coverArt path to database
-    const result = await addComic(comicData)
+    const result = await addComic(ComicData)
     console.log(result)
 
     res.json({ message: 'Comic added successfully' })
@@ -56,18 +43,3 @@ router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
 })
 
 export default router
-
-// router.get('/:comicId', async (req, res) => {
-//   try {
-//     const comicId = Number(req.params.comicId)
-//     if (isNaN(comicId)) {
-//       res.sendStatus(400)
-//       return
-//     }
-//     const comic = await db.getComicById(comicId)
-//     res.json({ comic })
-//   } catch (error) {
-//     res.sendStatus(500)
-//     console.error(error)
-//   }
-// })
