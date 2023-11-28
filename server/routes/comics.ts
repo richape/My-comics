@@ -18,7 +18,7 @@ router.get('/', async (req, res) => {
   }
 })
 
-router.post('/add-comic', upload.single('coverArt'), async (req, res) => {
+router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
   try {
     const ComicData: ComicData = {
       title: req.body.title,
