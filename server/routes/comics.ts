@@ -20,7 +20,9 @@ router.get('/', async (req, res) => {
 
 router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
   try {
-    const ComicData: ComicData = {
+    console.log(req.file)
+
+    const comicData: ComicData = {
       title: req.body.title,
       name: req.body.name,
       issue: req.body.issue,
@@ -32,7 +34,7 @@ router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
     }
 
     // Save coverArt path to database
-    const result = await addComic(ComicData)
+    const result = await addComic(comicData)
     console.log(result)
 
     res.json({ message: 'Comic added successfully' })
