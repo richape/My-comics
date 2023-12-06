@@ -1,6 +1,6 @@
 export function up(knex) {
   return knex.schema.createTable('comics', (table) => {
-    table.increments('id').primary()
+    table.integer('id').primary()
     table.string('title')
     table.string('name')
     table.string('issue')

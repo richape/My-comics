@@ -2,7 +2,6 @@
 import { Router } from 'express'
 import * as db from '../db/comicDb.ts'
 import upload from '../upload.js'
-import { addComic } from '../db/comicDb.ts'
 import { ComicData } from '../../models/comics.ts'
 
 const router = Router()
@@ -40,13 +39,25 @@ router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
     }
 
     // Save coverArt path to database
-    const result = await addComic(comicData)
+    const result = await db.addComic(comicData)
     console.log(result)
 
     res.json({ message: 'Comic added successfully' })
   } catch (error) {
     console.error(error)
     res.status(500).json({ message: 'Error adding comic' })
+  }
+})
+
+router.delete('/:id', async (req, res) => {
+  try {
+    const id = Number(req.params.id)
+    await db.deleteComic(id)
+
+    res.json({ message: 'Comic deleted successfully' })
+  } catch (error) {
+    console.error(error)
+    res.status(500).json({ message: 'Error deleting comic!' })
   }
 })
 

@@ -44,3 +44,7 @@ export async function addComic(comic: ComicData): Promise<Comic[]> {
   }
   throw Error
 }
+
+export function deleteComic(id: number) {
+  return db('comics').where({ id }).delete()
+}
