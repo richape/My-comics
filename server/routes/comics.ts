@@ -22,11 +22,11 @@ router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
   try {
     console.log(req.file)
 
-    let coverArt: string | null = null
+    // let coverArt: string | null = null
 
-    if (req.file) {
-      coverArt = req.file.path
-    }
+    // if (req.file) {
+    //   coverArt = req.file.path
+    // }
 
     const comicData: ComicData = {
       title: req.body.title,
@@ -35,7 +35,7 @@ router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
       datePublished: req.body.datePublished,
       publisher: req.body.publisher,
       credits: req.body.credits,
-      coverArt: coverArt,
+      coverArt: req.body.coverArt,
       coverArtist: req.body.coverArtist,
     }
 

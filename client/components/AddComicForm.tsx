@@ -1,29 +1,21 @@
-import { useMutation, useQueryClient } from '@tanstack/react-query'
-import { addComic } from '../apis/comics'
+// import { useMutation, useQueryClient } from '@tanstack/react-query'
+// import { addComic } from '../apis/comics'
 import Nav from './Nav'
 import { ComicData } from '../../models/comics'
 import { useRef } from 'react'
+import { useComics } from '../hooks/useComics'
 
 const AddComicForm: React.FC = () => {
-  const queryClient = useQueryClient()
-  const mutation = useMutation((comicData: ComicData) => addComic(comicData), {
-    onSuccess: () => {
-      console.log('Form reset successfully')
-
-      queryClient.invalidateQueries(['addComic'])
-      formRef.current?.reset()
-    },
-  })
-
   const formRef = useRef<HTMLFormElement>(null)
 
   let newComicData: ComicData | undefined
 
+  const comic = useComics()
   const handleFormSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     const form = new FormData(event.currentTarget as HTMLFormElement)
 
-    const coverArtInput = form.get('coverArt') as File | null
+    // const coverArtInput = form.get('coverArt') as File | null
 
     newComicData = {
       title: form.get('title')?.toString() || '',
@@ -32,17 +24,17 @@ const AddComicForm: React.FC = () => {
       datePublished: form.get('datePublished')?.toString() || '',
       publisher: form.get('publisher')?.toString() || '',
       credits: form.get('credits')?.toString() || '',
-      coverArt: coverArtInput?.name || null,
+      coverArt: 'images/comic_placeholder.jpg',
       coverArtist: form.get('coverArtist')?.toString() || '',
     }
+
+    console.log(newComicData)
+
+    if (newComicData) {
+      comic.add.mutate(newComicData)
+      formRef.current?.reset()
+    }
   }
-
-  console.log(newComicData)
-
-  if (newComicData) {
-    mutation.mutate(newComicData)
-  }
-
   return (
     <div className="container">
       <Nav />

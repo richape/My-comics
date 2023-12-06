@@ -1,7 +1,23 @@
-// import { useMutation } from "@tanstack/react-query";
-// import { deleteComic } from "../apis/comics";
-// import { Comic } from "../../models/comics";
+import { useNavigate } from 'react-router-dom'
+import { useComics } from '../hooks/useComics'
 
-// const deleteComicMutation = useMutation(Comic: comic.id) => {
-//   return deleteComic(comic.id)
-// }
+type DeleteButtonParams = { id: number }
+
+const DeleteButton = ({ id }: DeleteButtonParams) => {
+  const comic = useComics()
+  const navigate = useNavigate()
+  const handleDelete = async () => {
+    comic.delete.mutate(id)
+    navigate('/')
+  }
+
+  return (
+    <>
+      <button className="delete-button" onClick={handleDelete}>
+        Delete
+      </button>
+    </>
+  )
+}
+
+export default DeleteButton

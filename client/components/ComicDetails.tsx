@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import CoverArt from './CoverArt.tsx'
 import Nav from './Nav.tsx'
 import Footer from './Footer.tsx'
+import DeleteButton from './DeleteButton.tsx'
 
 function ComicDetails() {
   const { data, error, isLoading } = useComics()
@@ -33,6 +34,7 @@ function ComicDetails() {
             <h4>Published by: {findComic.publisher}</h4>
             <h4>Writers: {findComic.credits}</h4>
             <h4>Cover Artist: {findComic.coverArtist}</h4>
+            <DeleteButton id={Number(id)} />
           </>
         ) : null}
       </div>
