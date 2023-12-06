@@ -22,6 +22,12 @@ router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
   try {
     console.log(req.file)
 
+    let coverArt: File | null = null
+
+    if (req.file) {
+      coverArt = req.file as File
+    }
+
     const comicData: ComicData = {
       title: req.body.title,
       name: req.body.name,
@@ -30,7 +36,6 @@ router.post('/add-comics', upload.single('coverArt'), async (req, res) => {
       publisher: req.body.publisher,
       credits: req.body.credits,
       coverArtist: req.body.coverArtist,
-      coverArt: req.file?.filename as string,
     }
 
     // Save coverArt path to database

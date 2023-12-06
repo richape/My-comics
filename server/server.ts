@@ -1,5 +1,4 @@
 import * as Path from 'node:path'
-
 import express from 'express'
 import comicsRouter from './routes/comics.ts'
 
