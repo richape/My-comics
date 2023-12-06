@@ -17,6 +17,6 @@ export interface ComicData {
   datePublished: string
   publisher: string
   credits: string
-  coverArt: string | null
+  coverArt?: string | null
   coverArtist: string
 }

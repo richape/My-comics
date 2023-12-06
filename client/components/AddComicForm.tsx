@@ -32,7 +32,7 @@ const AddComicForm: React.FC = () => {
       datePublished: form.get('datePublished')?.toString() || '',
       publisher: form.get('publisher')?.toString() || '',
       credits: form.get('credits')?.toString() || '',
-      coverArt: coverArtInput || null,
+      coverArt: coverArtInput?.name || null,
       coverArtist: form.get('coverArtist')?.toString() || '',
     }
   }
