@@ -1,23 +1,24 @@
 // import { useMutation, useQueryClient } from '@tanstack/react-query'
 // import { addComic } from '../apis/comics'
 import Nav from './Nav'
-import { ComicData } from '../../models/comics'
 import { useRef } from 'react'
-import { useComics } from '../hooks/useComics'
+import { useNavigate } from 'react-router-dom'
+import { addComic } from '../apis/comics'
+import { useMutation } from '@tanstack/react-query'
 
 const AddComicForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement>(null)
+  const navigate = useNavigate()
 
-  let newComicData: ComicData | undefined
+  const comicMutation = useMutation(addComic, {
+    onSuccess: () => navigate('/'),
+  })
 
-  const comic = useComics()
   const handleFormSubmit = (event: React.FormEvent) => {
     event.preventDefault()
     const form = new FormData(event.currentTarget as HTMLFormElement)
 
-    // const coverArtInput = form.get('coverArt') as File | null
-
-    newComicData = {
+    const newComicData = {
       title: form.get('title')?.toString() || '',
       name: form.get('name')?.toString() || '',
       issue: form.get('issue')?.toString() || '',
@@ -31,15 +32,16 @@ const AddComicForm: React.FC = () => {
     console.log(newComicData)
 
     if (newComicData) {
-      comic.add.mutate(newComicData)
+      comicMutation.mutate(newComicData)
       formRef.current?.reset()
     }
   }
+
   return (
     <div className="container">
       <Nav />
       <div className="add-comic">
-        <h2>Add Comic</h2>
+        <h1>Add Comic</h1>
         <form
           onSubmit={handleFormSubmit}
           encType="multipart/form-data"
