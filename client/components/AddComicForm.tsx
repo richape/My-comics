@@ -28,7 +28,7 @@ const AddComicForm: React.FC = () => {
       coverArt: 'images/comic_placeholder.jpg',
       coverArtist: form.get('coverArtist')?.toString() || '',
     }
-    // hahaha
+
     console.log(newComicData)
 
     if (newComicData) {
