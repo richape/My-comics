@@ -1,5 +1,6 @@
 body {
   // position: absolute;
+  background-color: lightgoldenrodyellow;
   top: 0;
   left: 0;
   margin: 0;
@@ -13,7 +14,7 @@ body {
 }
 
 .comic-box {
-  width: 200px;
+  // width: 200px;
   height: 300px; // set a fixed width & height
   // margin-right: 20px;
   background-color: #ffffffe3;
@@ -33,7 +34,7 @@ body {
 .cover-art {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around
+  // justify-content: space-around
 
     img {
       max-width: 100%;
